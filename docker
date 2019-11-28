@@ -1,0 +1,11 @@
+#!/bin/sh -x
+
+docker run \
+  --name test_tarantool_index \
+  -d -p 3302:3301 \
+  -v $(pwd)/db:/var/lib/tarantool \
+  -v $(pwd):/opt/tarantool \
+  tarantool/tarantool \
+  tarantool /opt/tarantool/test_table.lua
+
+
